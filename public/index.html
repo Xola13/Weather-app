@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather App</h1>
+      <p>Check the current weather in any city</p>
+    </header>
+    
+    <div class="search-container">
+      <form id="weather-form">
+        <input 
+          type="text" 
+          id="city-input" 
+          placeholder="Enter city name..." 
+          required
+        >
+        <button type="submit" id="search-btn">
+          Search
+        </button>
+      </form>
+    </div>
+    
+    <div class="weather-container" id="weather-container">
+      <!-- Weather data will be displayed here -->
+    </div>
+    
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+    </div>
+    
+    <div class="error-container" id="error-container">
+      <!-- Error messages will be displayed here -->
+    </div>
+  </div>
+  
+  <script src="js/app.js"></script>
+</body>
+</html>
