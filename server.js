@@ -1,14 +1,13 @@
 // Import modules
 
-const express = require('express');
-const axios = require('axios');
+const express = require('express');  // Creates  HTTP server
+const axios = require('axios');   // Communicates with external API
 const path = require('path');
-const cors = require('cors');
-const { error } = require('console');
+const cors = require('cors');  // Connects front-end with backend (server)
 require('dotenv').config();
 
 // Initialize Express app
-const app = express();
+const app = express();   
 const PORT = process.env.PORT || 3000;
 
 // Middleware
@@ -37,7 +36,8 @@ app.get('/api/weather', async (req, res) => {
             city: response.data.name,
             country: response.data.sys.country,
             temperature: response.data.main.temp,
-            feels_like: response.data.main.humidity,
+            feels_like: response.data.main.feels_like,
+            humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
             wind_speed: response.data.wind.speed
